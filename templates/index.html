@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<link rel='stylesheet' href='/static/style.css'>
+</head>
+<body>
+
+<h1> World Factbook </h1> 
+<div> {{w|length}} countries found in {{a}} </div>
+<ul>
+{% for c in cl %}
+<li> <a href='/countryByName/{{c.name}}'> <img src='{{c.flag}}' class='tiny'> {{c.name}}</a> </li>
+{% endfor %}
+</ul>
+<div class='nav_button'>
+<a href='/begin/{{page_number-page-size}}'> </a>
+</div>
+<div class='nav_button'>
+<a href='/begin/{{page_number+page-size}}'> </a>
+</div>
+</body>
+</html>
